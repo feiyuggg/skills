@@ -3,7 +3,7 @@
 The CLI for the open agent skills ecosystem.
 
 <!-- agent-list:start -->
-Supports **OpenCode**, **Claude Code**, **Codex**, **Cursor**, and [31 more](#available-agents).
+Supports **OpenCode**, **Claude Code**, **Codex**, **Cursor**, and [32 more](#available-agents).
 <!-- agent-list:end -->
 
 ## Install a Skill
@@ -235,6 +235,7 @@ Skills can be installed to any of these agents:
 | Pi                 | `pi`              | `.pi/skills/`          | `~/.pi/agent/skills/`                  |
 | Qoder              | `qoder`           | `.qoder/skills/`       | `~/.qoder/skills/`                     |
 | Qwen Code          | `qwen-code`       | `.qwen/skills/`        | `~/.qwen/skills/`                      |
+| Replit             | `replit`          | `.agent/skills/`       | N/A (project-only)                     |
 | Roo Code           | `roo`             | `.roo/skills/`         | `~/.roo/skills/`                       |
 | Trae               | `trae`            | `.trae/skills/`        | `~/.trae/skills/`                      |
 | Trae CN            | `trae-cn`         | `.trae/skills/`        | `~/.trae-cn/skills/`                   |
@@ -422,6 +423,7 @@ Telemetry is automatically disabled in CI environments.
 - [OpenHands Skills Documentation](https://docs.openhands.ai/modules/usage/how-to/using-skills)
 - [Pi Skills Documentation](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/skills.md)
 - [Qoder Skills Documentation](https://docs.qoder.com/cli/Skills)
+- [Replit Skills Documentation](https://docs.replit.com/replitai/skills)
 - [Roo Code Skills Documentation](https://docs.roocode.com/features/skills)
 - [Trae Skills Documentation](https://docs.trae.ai/ide/skills)
 - [Vercel Agent Skills Repository](https://github.com/vercel-labs/agent-skills)

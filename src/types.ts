@@ -27,6 +27,7 @@ export type AgentType =
   | 'pi'
   | 'qoder'
   | 'qwen-code'
+  | 'replit'
   | 'roo'
   | 'trae'
   | 'trae-cn'
@@ -48,7 +49,8 @@ export interface AgentConfig {
   name: string;
   displayName: string;
   skillsDir: string;
-  globalSkillsDir: string;
+  /** Global skills directory. Set to undefined if the agent doesn't support global installation. */
+  globalSkillsDir: string | undefined;
   detectInstalled: () => Promise<boolean>;
 }
 

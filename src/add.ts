@@ -368,7 +368,10 @@ async function handleRemoteSkill(
 
   let installGlobally = options.global ?? false;
 
-  if (options.global === undefined && !options.yes) {
+  // Check if any selected agents support global installation
+  const supportsGlobal = targetAgents.some((a) => agents[a].globalSkillsDir !== undefined);
+
+  if (options.global === undefined && !options.yes && supportsGlobal) {
     const scope = await p.select({
       message: 'Installation scope',
       options: [
@@ -781,7 +784,10 @@ async function handleWellKnownSkills(
 
   let installGlobally = options.global ?? false;
 
-  if (options.global === undefined && !options.yes) {
+  // Check if any selected agents support global installation
+  const supportsGlobal = targetAgents.some((a) => agents[a].globalSkillsDir !== undefined);
+
+  if (options.global === undefined && !options.yes && supportsGlobal) {
     const scope = await p.select({
       message: 'Installation scope',
       options: [
@@ -1168,7 +1174,10 @@ async function handleDirectUrlSkillLegacy(
 
   let installGlobally = options.global ?? false;
 
-  if (options.global === undefined && !options.yes) {
+  // Check if any selected agents support global installation
+  const supportsGlobal = targetAgents.some((a) => agents[a].globalSkillsDir !== undefined);
+
+  if (options.global === undefined && !options.yes && supportsGlobal) {
     const scope = await p.select({
       message: 'Installation scope',
       options: [
@@ -1605,7 +1614,10 @@ export async function runAdd(args: string[], options: AddOptions = {}): Promise<
 
     let installGlobally = options.global ?? false;
 
-    if (options.global === undefined && !options.yes) {
+    // Check if any selected agents support global installation
+    const supportsGlobal = targetAgents.some((a) => agents[a].globalSkillsDir !== undefined);
+
+    if (options.global === undefined && !options.yes && supportsGlobal) {
       const scope = await p.select({
         message: 'Installation scope',
         options: [

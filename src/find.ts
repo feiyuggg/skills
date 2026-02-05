@@ -284,7 +284,7 @@ ${DIM}  2) npx skills add <owner/repo@skill>${RESET}`;
     for (const skill of results.slice(0, 6)) {
       const pkg = skill.source || skill.slug;
       console.log(`${TEXT}${pkg}@${skill.name}${RESET}`);
-      console.log(`${DIM}└ https://skills.sh/${pkg}/${skill.slug}${RESET}`);
+      console.log(`${DIM}└ https://skills.sh/${skill.slug}${RESET}`);
       console.log();
     }
     return;
@@ -328,7 +328,7 @@ ${DIM}  2) npx skills add <owner/repo@skill>${RESET}`;
   const info = getOwnerRepoFromString(pkg);
   if (info && (await isRepoPublic(info.owner, info.repo))) {
     console.log(
-      `${DIM}View the skill at${RESET} ${TEXT}https://skills.sh/${info.owner}/${info.repo}/${selected.slug}${RESET}`
+      `${DIM}View the skill at${RESET} ${TEXT}https://skills.sh/${selected.slug}${RESET}`
     );
   } else {
     console.log(`${DIM}Discover more skills at${RESET} ${TEXT}https://skills.sh${RESET}`);

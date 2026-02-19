@@ -28,7 +28,20 @@ This is usually **rotation by certainty and slope**, not by abandoning quality.
 
 ---
 
-## 3) Position Sizing Blueprint
+## 3) Suggested Name Lists by Layer
+
+### A层 Core（现金流确定性最高）
+- NVDA, MSFT, GOOGL, AMZN, META, AVGO, TSM
+
+### B层 Satellite（设备与上游周期）
+- ASML, AMAT, LRCX, KLAC, MU, QCOM, ARM
+
+### C层 Trial（应用层试错）
+- PLTR, NOW, CRM, ADBE, SNOW, DDOG, U
+
+Selection rule: do not use full list mechanically; always down-select by FCF visibility + valuation safety margin.
+
+## 4) Position Sizing Blueprint
 
 - Core: 50-70%
   - Highest certainty, strongest moat, proven FCF conversion.

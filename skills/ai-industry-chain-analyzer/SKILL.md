@@ -37,6 +37,21 @@ Use this skill to explain AI-sector positioning with a **cash-flow-first** frame
    - Rebalance triggers
    - Main risks that would invalidate the thesis
 
+## Stock Universe (default watchlist)
+
+Use this default universe when user asks for concrete names; then filter by valuation and cash-flow quality.
+
+- **A层（Core：高确定性现金流）**
+  - NVDA, MSFT, GOOGL, AMZN, META, AVGO, TSM
+- **B层（Satellite：周期/设备/上游）**
+  - ASML, AMAT, LRCX, KLAC, MU, QCOM, ARM
+- **C层（Trial：应用与软件）**
+  - PLTR, NOW, CRM, ADBE, SNOW, DDOG, U
+
+If user focuses on China/HK AI chain, include:
+- **China/HK Infra & Platforms**: 9988.HK (BABA), 0700.HK (TCEHY), 1810.HK (Xiaomi), 1211.HK (BYD for AI+auto exposure)
+- **China/HK Semiconductor/Hardware proxies**: 1347.HK (Hua Hong), 0981.HK (SMIC), 2382.HK (Sunny Optical)
+
 ## Output Template (use this structure)
 
 ### 1) 核心结论（1-2句）

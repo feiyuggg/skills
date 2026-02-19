@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "skills": {
+    "openclaw-aisa-us-stock-analyst": {
+      "version": "1.0.1",
+      "installedAt": 1770736976423
+    },
+    "pandas-construction-analysis": {
+      "version": "1.0.0",
+      "installedAt": 1770736984935
+    },
+    "pdf-report-generator": {
+      "version": "1.0.0",
+      "installedAt": 1770736994178
+    },
+    "csv-analyzer": {
+      "version": "1.1.0",
+      "installedAt": 1770736996369
+    },
+    "equity-analyst": {
+      "version": "1.0.7",
+      "installedAt": 1770736999095
+    },
+    "yahooquery": {
+      "version": "1.0.0",
+      "installedAt": 1770737009824
+    },
+    "browser-automation": {
+      "version": "1.0.1",
+      "installedAt": 1770737011766
+    }
+  }
+}

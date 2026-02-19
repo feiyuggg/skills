@@ -1,0 +1,204 @@
+{
+  "ticker": "TCOM",
+  "yahoo": {
+    "meta": {
+      "company_name": "Trip.com Group Limited"
+    },
+    "price": {
+      "current": 56.12,
+      "previous_close": 54.43,
+      "day_high": 56.4479,
+      "day_low": 53.69,
+      "high_52w": null,
+      "low_52w": null,
+      "market_cap": 36680224768,
+      "currency": "USD"
+    },
+    "valuation": {
+      "forward_pe": 1.8857812,
+      "trailing_pe": null,
+      "price_to_book": 1.5098109,
+      "peg": null,
+      "beta": -0.177
+    },
+    "financial": {
+      "revenue_growth": 0.155,
+      "gross_margin": 0.80718005,
+      "operating_margin": 0.30396,
+      "profit_margin": 0.52163,
+      "free_cashflow": null,
+      "operating_cashflow": null,
+      "total_cash": 80455000064,
+      "total_debt": 31935000576,
+      "roe": 0.20188999
+    },
+    "earnings": {
+      "earnings_date": "2026-02-26 05:00:S",
+      "trend": [
+        {
+          "maxAge": 1,
+          "period": "0q",
+          "endDate": "2025-12-31",
+          "growth": 0.0725,
+          "earningsEstimate": {
+            "avg": 4.66532,
+            "low": 3.838,
+            "high": 5.58,
+            "yearAgoEps": 4.35,
+            "numberOfAnalysts": 13,
+            "growth": 0.0725,
+            "earningsCurrency": "CNY"
+          },
+          "revenueEstimate": {
+            "avg": 14859539700,
+            "low": 14709309720,
+            "high": 15045308000,
+            "numberOfAnalysts": 18,
+            "yearAgoRevenue": 12744000000,
+            "growth": 0.16600001,
+            "revenueCurrency": "CNY"
+          },
+          "epsTrend": {
+            "current": 4.66532,
+            "7daysAgo": 4.66532,
+            "30daysAgo": 4.73928,
+            "60daysAgo": 4.74026,
+            "90daysAgo": 4.68328,
+            "epsTrendCurrency": "CNY"
+          },
+          "epsRevisions": {
+            "upLast7days": 0,
+            "upLast30days": 0,
+            "downLast30days": 0,
+            "downLast7Days": 0,
+            "downLast90days": {},
+            "epsRevisionsCurrency": "CNY"
+          }
+        },
+        {
+          "maxAge": 1,
+          "period": "+1q",
+          "endDate": "2026-03-31",
+          "growth": 0.14140001,
+          "earningsEstimate": {
+            "avg": 6.80264,
+            "low": 6.353,
+            "high": 7.22493,
+            "yearAgoEps": 5.96,
+            "numberOfAnalysts": 3,
+            "growth": 0.14140001,
+            "earningsCurrency": "CNY"
+          },
+          "revenueEstimate": {
+            "avg": 16142843480,
+            "low": 16079686950,
+            "high": 16206000000,
+            "numberOfAnalysts": 2,
+            "yearAgoRevenue": 13830000000,
+            "growth": 0.1672,
+            "revenueCurrency": "CNY"
+          },
+          "epsTrend": {
+            "current": 6.80264,
+            "7daysAgo": 6.80264,
+            "30daysAgo": 6.80264,
+            "60daysAgo": 6.80264,
+            "90daysAgo": 6.76598,
+            "epsTrendCurrency": "CNY"
+          },
+          "epsRevisions": {
+            "upLast7days": 2,
+            "upLast30days": 2,
+            "downLast30days": 0,
+            "downLast7Days": 0,
+            "downLast90days": {},
+            "epsRevisionsCurrency": "CNY"
+          }
+        },
+        {
+          "maxAge": 1,
+          "period": "0y",
+          "endDate": "2025-12-31",
+          "growth": 0.7409,
+          "earningsEstimate": {
+            "avg": 45.61272,
+            "low": 44.351,
+            "high": 51.24375,
+            "yearAgoEps": 26.2,
+            "numberOfAnalysts": 20,
+            "growth": 0.7409,
+            "earningsCurrency": "CNY"
+          },
+          "revenueEstimate": {
+            "avg": 61877226950,
+            "low": 61621000000,
+            "high": 62138101040,
+            "numberOfAnalysts": 34,
+            "yearAgoRevenue": 53294000000,
+            "growth": 0.1611,
+            "revenueCurrency": "CNY"
+          },
+          "epsTrend": {
+            "current": 45.61272,
+            "7daysAgo": 45.61272,
+            "30daysAgo": 45.61272,
+            "60daysAgo": 45.63075,
+            "90daysAgo": 45.30983,
+            "epsTrendCurrency": "CNY"
+          },
+          "epsRevisions": {
+            "upLast7days": 0,
+            "upLast30days": 0,
+            "downLast30days": 0,
+            "downLast7Days": 0,
+            "downLast90days": {},
+            "epsRevisionsCurrency": "CNY"
+          }
+        },
+        {
+          "maxAge": 1,
+          "period": "+1y",
+          "endDate": "2026-12-31",
+          "growth": -0.34759998,
+          "earningsEstimate": {
+            "avg": 29.75955,
+            "low": 24.65,
+            "high": 33.8,
+            "yearAgoEps": 45.61272,
+            "numberOfAnalysts": 22,
+            "growth": -0.34759998,
+            "earningsCurrency": "CNY"
+          },
+          "revenueEstimate": {
+            "avg": 70234461710,
+            "low": 67854000000,
+            "high": 72275281200,
+            "numberOfAnalysts": 38,
+            "yearAgoRevenue": 61877226950,
+            "growth": 0.1351,
+            "revenueCurrency": "CNY"
+          },
+          "epsTrend": {
+            "current": 29.75955,
+            "7daysAgo": 29.75955,
+            "30daysAgo": 29.85302,
+            "60daysAgo": 29.77327,
+            "90daysAgo": 29.83092,
+            "epsTrendCurrency": "CNY"
+          },
+          "epsRevisions": {
+            "upLast7days": 0,
+            "upLast30days": 0,
+            "downLast30days": 1,
+            "downLast7Days": 0,
+            "downLast90days": {},
+            "epsRevisionsCurrency": "CNY"
+          }
+        }
+      ]
+    }
+  },
+  "sec": {
+    "error": "SEC ticker map fetch failed: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json"
+  }
+}

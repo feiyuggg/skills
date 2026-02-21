@@ -28,6 +28,14 @@
     "browser-automation": {
       "version": "1.0.1",
       "installedAt": 1770737011766
+    },
+    "cost-report": {
+      "version": "1.0.2",
+      "installedAt": 1771694869371
+    },
+    "memory-hygiene": {
+      "version": "1.0.0",
+      "installedAt": 1771694871266
     }
   }
 }

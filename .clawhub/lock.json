@@ -52,6 +52,10 @@
     "gateway-guard": {
       "version": "1.0.2",
       "installedAt": 1771695325989
+    },
+    "2captcha": {
+      "version": "1.0.0",
+      "installedAt": 1771695730585
     }
   }
 }

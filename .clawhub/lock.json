@@ -60,6 +60,10 @@
     "auto-updater": {
       "version": "1.0.0",
       "installedAt": 1771695970014
+    },
+    "clawflows": {
+      "version": "1.0.0",
+      "installedAt": 1771696134332
     }
   }
 }

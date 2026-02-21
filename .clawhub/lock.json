@@ -36,6 +36,22 @@
     "memory-hygiene": {
       "version": "1.0.0",
       "installedAt": 1771694871266
+    },
+    "config-safe": {
+      "version": "1.0.0",
+      "installedAt": 1771695318621
+    },
+    "clawdefender": {
+      "version": "1.0.1",
+      "installedAt": 1771695321336
+    },
+    "cron-mastery": {
+      "version": "1.0.3",
+      "installedAt": 1771695323805
+    },
+    "gateway-guard": {
+      "version": "1.0.2",
+      "installedAt": 1771695325989
     }
   }
 }

@@ -1,0 +1,187 @@
+name: x-audio-brief
+description: Search X/Twitter for a topic, summarize what people are saying, and deliver as audio briefing
+author: cluka
+version: 1.0.0
+
+# Turn X chatter into a listenable audio brief
+# Perfect for commutes, walks, or when you want to "hear" what's trending
+
+requires:
+  - skill: search-x
+  - skill: elevenlabs-tts
+  - capability: llm-analysis
+
+tags:
+  - social-media
+  - audio
+  - research
+  - tts
+  - x-twitter
+
+trigger:
+  # On-demand by default, but can be scheduled
+  manual: true
+  # Example scheduled: "0 8 * * *" for daily 8am briefing
+
+config:
+  topic:
+    description: "What to search for on X"
+    required: true
+    example: "OpenClaw"
+  
+  days:
+    description: "How far back to search (1-30)"
+    default: 1
+  
+  language:
+    description: "Output language (english, hebrew, french, spanish, german, etc)"
+    default: "english"
+  
+  voice:
+    description: "TTS voice to use (auto-selects multilingual voice if non-English)"
+    default: "adam"
+  
+  max_tweets:
+    description: "Maximum tweets to include in summary"
+    default: 15
+  
+  duration_minutes:
+    description: "Target audio length in minutes"
+    default: 3
+  
+  include_text:
+    description: "Include text summary alongside audio"
+    default: true
+  
+  send_file:
+    description: "Send audio file via message (not just path)"
+    default: true
+  
+  channel:
+    description: "Channel to send to (discord, telegram, etc)"
+    default: "discord"
+  
+  target:
+    description: "Channel/chat ID to send the file to"
+    required: false
+
+steps:
+  - name: search-x
+    skill: search-x
+    method: search
+    args:
+      query: "${config.topic}"
+      days: "${config.days}"
+    capture: tweets
+
+  - name: format-for-summary
+    action: evaluate
+    expression: |
+      // Extract key info from tweets for summarization
+      const formatted = tweets.slice(0, config.max_tweets).map(t => ({
+        author: t.author || t.username,
+        content: t.text || t.content,
+        engagement: t.likes || t.engagement || 0,
+        date: t.date
+      }));
+      // Sort by engagement
+      formatted.sort((a, b) => b.engagement - a.engagement);
+      formatted
+    capture: topTweets
+
+  - name: select-voice
+    action: evaluate
+    expression: |
+      // Select appropriate voice for language
+      // ElevenLabs multilingual voices work better for non-English
+      const multilingualVoices = {
+        'hebrew': 'adam',      // Adam has good Hebrew support
+        'french': 'antoine',   // French voice
+        'spanish': 'mateo',    // Spanish voice  
+        'german': 'viktor',    // German voice
+        'default': 'adam'      // Multilingual fallback
+      };
+      const lang = config.language.toLowerCase();
+      if (lang === 'english') {
+        config.voice || 'adam'
+      } else {
+        multilingualVoices[lang] || multilingualVoices['default']
+      }
+    capture: selectedVoice
+
+  - name: generate-summary
+    capability: llm-analysis
+    method: summarize
+    args:
+      input: "${topTweets}"
+      prompt: |
+        Create an audio briefing script about "${config.topic}" based on these X/Twitter posts.
+        
+        **LANGUAGE: Write the ENTIRE script in ${config.language.toUpperCase()}.**
+        ${config.language.toLowerCase() !== 'english' ? `Translate all content to ${config.language}. Keep names and product names in their original form.` : ''}
+        
+        Requirements:
+        - Write for TEXT-TO-SPEECH (will be read aloud)
+        - Use conversational, natural language appropriate for ${config.language}
+        - No URLs, hashtags, or @ mentions (spell out names)
+        - No emojis or special characters
+        - Start with an appropriate greeting for ${config.language} speakers
+        - Go through each notable post in detail - who said it, what they said, why it matters
+        - Add context and connections between posts when relevant
+        - Include engagement numbers when impressive (likes, retweets)
+        - Target 3 MINUTES when read aloud (~450-500 words equivalent)
+        - End with overall sentiment/vibe and key takeaways
+        
+        Posts to summarize:
+        ${topTweets.map(t => `- ${t.author}: ${t.content}`).join('\n')}
+    capture: audioScript
+
+  - name: generate-text-summary
+    capability: llm-analysis
+    method: summarize
+    args:
+      input: "${topTweets}"
+      prompt: |
+        Create a brief text summary of these X posts about "${config.topic}".
+        
+        Format:
+        - Bullet points with author attribution
+        - Include key insights and notable takes
+        - Keep it scannable
+        
+        Posts:
+        ${topTweets.map(t => `- @${t.author}: ${t.content}`).join('\n')}
+    capture: textSummary
+    condition: "${config.include_text}"
+
+  - name: generate-audio
+    skill: elevenlabs-tts
+    method: speak
+    args:
+      text: "${audioScript}"
+      voice: "${selectedVoice}"
+      model: "eleven_multilingual_v2"
+    capture: audioFile
+
+  - name: deliver-briefing
+    action: message
+    method: send
+    args:
+      channel: "${config.channel}"
+      target: "${config.target}"
+      message: |
+        🎙️ **X Audio Brief: ${config.topic}**
+        
+        ${config.include_text ? textSummary : ''}
+      filePath: "${audioFile}"
+    condition: "${config.send_file && config.target}"
+
+  - name: fallback-notify
+    action: notify
+    message: |
+      🎙️ **X Audio Brief: ${config.topic}**
+      
+      ${config.include_text ? textSummary : ''}
+      
+      🔊 Audio: ${audioFile}
+    condition: "${!config.send_file || !config.target}"

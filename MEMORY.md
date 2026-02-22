@@ -33,10 +33,20 @@
 - DCF 敏感性矩阵
 - 分批建仓计划 + 持有逻辑
 
+### 4) 安装与配置主题（运维）
+- 技能安装与依赖管理
+- OpenClaw/模型/网关配置变更
+- Telegram/Feishu 等渠道接入与排错
+- GitHub 备份与自动化同步
+
+详细文档：
+- `memory/installation-and-config.md`
+
 ## 记忆文件导航
 
 - 方法论主文档：`memory/value-investing-methodology.md`
 - Gaven 分析框架：`memory/investment_framework.md`
+- 安装与配置主题：`memory/installation-and-config.md`
 - 日志记忆：`memory/YYYY-MM-DD.md`
 
 ## 维护规则
